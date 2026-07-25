@@ -7,7 +7,7 @@ engine = InferenceEngine(rules=RULES, questions=QUESTIONS)
 
 # Route to serve images from root level 'images' folder if present, or static/images
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-IMAGES_DIR = os.path.join(BASE_DIR, 'images')
+IMAGES_DIR = BASE_DIR
 STATIC_IMAGES_DIR = os.path.join(BASE_DIR, 'static', 'images')
 
 @app.route('/')
