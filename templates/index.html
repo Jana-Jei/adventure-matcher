@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✈ Adventure Matcher — Travel Expert System</title>
+
+    <!-- Google Fonts: Outfit & Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS stylesheet -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- Animated Canvas Background -->
+    <canvas id="bgCanvas"></canvas>
+
+    <!-- Floating Ambient Gradient Orbs -->
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <!-- Visible Floating Geometric Pattern Shapes (Circles, Rectangles, Rings, Pills) -->
+    <div class="floating-pattern shape-circle shape-1"></div>
+    <div class="floating-pattern shape-rect shape-2"></div>
+    <div class="floating-pattern shape-ring shape-3"></div>
+    <div class="floating-pattern shape-pill shape-4"></div>
+    <div class="floating-pattern shape-circle shape-5"></div>
+    <div class="floating-pattern shape-rect shape-6"></div>
+    <div class="floating-pattern shape-ring shape-7"></div>
+    <div class="floating-pattern shape-pill shape-8"></div>
+
+    <!-- App Container -->
+    <div class="app-wrapper">
+
+        <!-- Header Bar -->
+        <header class="app-header glass-card">
+            <div class="brand">
+                <span class="brand-icon">✈</span>
+                <span class="brand-title" id="brandTitle">مكتشف المغامرات الذكي</span>
+            </div>
+
+            <div class="header-controls">
+                <a href="/" class="pill-btn home-btn" id="homeLinkBtn">الرئيسية</a>
+                <button id="langToggleBtn" class="pill-btn lang-btn" onclick="toggleLanguage()">
+                    🌐 <span id="langText">English</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Screen Container -->
+        <main class="main-content">
+
+            <!-- 1. WELCOME SCREEN -->
+            <section id="welcomeScreen" class="screen active">
+                <div class="hero-card glass-card">
+                    <div class="hero-badge">
+                        <span id="heroBadgeText">🧠 Rule-Based Forward Chaining Expert System</span>
+                    </div>
+
+                    <h1 class="hero-title" id="heroTitle">مكتشف المغامرات الذكي</h1>
+                    <p class="hero-subtitle" id="heroSubtitle">نظام خبير تفاعلي يقيم تفضيلاتك ومخاوفك وميزانيتك لاختيار الوجهة المثالية مع التقييم والتحذيرات وصور الوجهة.</p>
+
+                    <div class="hero-features">
+                        <div class="feature-chip">
+                            <span class="chip-icon">🛡</span>
+                            <span id="feat1Text">فلترة المخاوف والطيران</span>
+                        </div>
+                        <div class="feature-chip">
+                            <span class="chip-icon">💎</span>
+                            <span id="feat2Text">تطابق الميزانية والأجواء</span>
+                        </div>
+                        <div class="feature-chip">
+                            <span class="chip-icon">🖼</span>
+                            <span id="feat3Text">معرض صور تفاعلي</span>
+                        </div>
+                    </div>
+
+                    <button class="cta-btn glowing-btn" onclick="startQuiz()">
+                        <span id="startBtnText">🚀 ابدأ المغامرة الآن</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- 2. QUESTION SCREEN -->
+            <section id="questionScreen" class="screen">
+                <div class="question-card glass-card">
+                    
+                    <!-- Top Bar: Progress & Why Button -->
+                    <div class="q-header">
+                        <div class="progress-info">
+                            <span id="stepCounterText">الخطوة 1 من 5</span>
+                            <div class="progress-track">
+                                <div id="progressBar" class="progress-fill" style="width: 20%;"></div>
+                            </div>
+                        </div>
+
+                        <button class="pill-btn why-btn" onclick="openWhyModal()">
+                            ❓ <span id="whyBtnText">لماذا هذا السؤال؟</span>
+                        </button>
+                    </div>
+
+                    <!-- Question Body -->
+                    <div class="q-body">
+                        <h2 id="questionText" class="q-title">جاري تحميل السؤال...</h2>
+                        <div id="optionsContainer" class="options-grid"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. RESULT SCREEN -->
+            <section id="resultScreen" class="screen">
+                <div class="result-card glass-card">
+
+                    <div class="result-header-banner">
+                        <span class="sparkle-icon">✨</span>
+                        <h2 id="resultBannerTitle">وجهتك المثالية الموصى بها</h2>
+                    </div>
+
+                    <div class="dest-headline">
+                        <h1 id="destTitle" class="dest-name">جاري حساب النتيجة...</h1>
+                        
+                        <div class="star-rating-row">
+                            <div id="starIcons" class="stars">★★★★★</div>
+                            <span id="ratingScore" class="rating-num">4.9/5</span>
+                        </div>
+                    </div>
+
+                    <!-- Warning Card -->
+                    <div id="warningBox" class="warning-card">
+                        <div class="warn-header">
+                            <span class="warn-icon">⚠️</span>
+                            <span id="warnTitleText" class="warn-title">تحذير مهم للرحلة</span>
+                        </div>
+                        <p id="warningText" class="warn-desc">لا توجد تحذيرات حرجة.</p>
+                    </div>
+
+                    <!-- Multi-Image Interactive Gallery Section (Unsplash Waterfall) -->
+                    <div class="gallery-section">
+                        <h3 id="galleryTitle" class="gallery-heading">📸 معرض صور الوجهة</h3>
+                        <div id="galleryGrid" class="gallery-grid">
+                            <!-- Gallery items dynamically inserted -->
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="result-actions">
+                        <button class="action-btn trace-btn" onclick="openTraceModal()">
+                            ⚙ <span id="traceBtnText">تتبع المنطق والاستدلال</span>
+                        </button>
+                        
+                        <button class="action-btn restart-btn" onclick="resetQuiz()">
+                            🔄 <span id="restartBtnText">تجربة استكشاف جديدة</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- MODAL 1: "Why Ask?" Modal -->
+    <div id="whyModal" class="modal-overlay">
+        <div class="modal-box glass-card">
+            <div class="modal-header">
+                <h3>💡 <span id="whyModalTitle">المنطق وراء السؤال</span></h3>
+                <button class="close-btn" onclick="closeWhyModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="whyModalContent"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: Rule Trace Drawer / Modal -->
+    <div id="traceModal" class="modal-overlay">
+        <div class="modal-box glass-card trace-modal-box">
+            <div class="modal-header">
+                <h3>🔍 <span id="traceModalTitle">تتبع قواعد الاستدلال (Rule Inference Trace)</span></h3>
+                <button class="close-btn" onclick="closeTraceModal()">&times;</button>
+            </div>
+            <div id="traceModalBody" class="modal-body scrollable-body">
+                <!-- Fired rules cards dynamically inserted -->
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: Fullscreen Image Lightbox -->
+    <div id="lightboxModal" class="lightbox-overlay" onclick="closeLightbox(event)">
+        <span class="lightbox-close" onclick="closeLightboxDirect()">&times;</span>
+        <button class="lightbox-nav nav-prev" onclick="navigateLightbox(-1); event.stopPropagation();">&#10094;</button>
+        <button class="lightbox-nav nav-next" onclick="navigateLightbox(1); event.stopPropagation();">&#10095;</button>
+        <div class="lightbox-content">
+            <img id="lightboxImg" src="" alt="Full Preview">
+            <div id="lightboxCaption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="/static/js/gallery.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

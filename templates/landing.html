@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتشف المغامرات الذكي — نظام خبير للسفر</title>
+    <meta name="description" content="نظام خبير ذكي يعتمد على الاستدلال الأمامي لاختيار وجهة سفرك المثالية بناءً على تفضيلاتك ومخاوفك وميزانيتك.">
+
+    <!-- Google Fonts: Outfit & Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/css/landing.css">
+</head>
+<body>
+
+    <!-- Animated Canvas Background -->
+    <canvas id="bgCanvas"></canvas>
+
+    <!-- Floating Ambient Orbs -->
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+    <div class="ambient-orb orb-4"></div>
+
+    <!-- Floating Pattern Shapes -->
+    <div class="floating-pattern shape-circle fp-1"></div>
+    <div class="floating-pattern shape-rect fp-2"></div>
+    <div class="floating-pattern shape-ring fp-3"></div>
+    <div class="floating-pattern shape-pill fp-4"></div>
+    <div class="floating-pattern shape-circle fp-5"></div>
+    <div class="floating-pattern shape-rect fp-6"></div>
+    <div class="floating-pattern shape-ring fp-7"></div>
+    <div class="floating-pattern shape-pill fp-8"></div>
+    <div class="floating-pattern shape-circle fp-9"></div>
+    <div class="floating-pattern shape-ring fp-10"></div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar glass-nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">
+                <span class="nav-icon">✈</span>
+                <span class="nav-title">مكتشف المغامرات</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">المميزات</a>
+                <a href="#how" class="nav-link">كيف يعمل</a>
+                <a href="#destinations" class="nav-link">الوجهات</a>
+                <a href="/matcher" class="nav-cta-btn">ابدأ الآن</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero-section">
+        <div class="hero-inner">
+            <div class="hero-badge animate-pop">
+                نظام خبير بالاستدلال الأمامي
+            </div>
+            <h1 class="hero-title animate-pop delay-1">
+                اكتشف وجهتك <span class="gradient-text">المثالية</span> للسفر
+            </h1>
+            <p class="hero-desc animate-pop delay-2">
+                نظام خبير ذكي يعمل بتقنية الاستدلال الأمامي وقواعد الإنتاج.
+                أجب على بضعة أسئلة ذكية عن مخاوفك وميزانيتك والأجواء التي تفضلها —
+                وسنطابقك مع الوجهة المثالية، مع تقييمات وتحذيرات ومعرض صور تفاعلي.
+            </p>
+            <div class="hero-actions animate-pop delay-3">
+                <a href="/matcher" class="btn-primary">
+                    ابدأ المطابقة الآن
+                </a>
+                <a href="#how" class="btn-secondary">
+                    كيف يعمل النظام
+                </a>
+            </div>
+
+            <div class="hero-stats animate-pop delay-4">
+                <div class="stat-item">
+                    <span class="stat-num">+28</span>
+                    <span class="stat-label">قاعدة استنتاج</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num">18</span>
+                    <span class="stat-label">وجهة سفر</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num">9</span>
+                    <span class="stat-label">أسئلة ذكية</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num">2</span>
+                    <span class="stat-label">لغات مدعومة</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FEATURES SECTION ==================== -->
+    <section id="features" class="section features-section">
+        <div class="section-inner">
+            <div class="section-badge">القدرات الأساسية</div>
+            <h2 class="section-title">مطابقة سفر ذكية</h2>
+            <p class="section-desc">يستخدم نظامنا الخبير قواعد الإنتاج والاستدلال الأمامي لتقييم ملفك الشخصي الفريد واقتراح الرحلة المثالية.</p>
+
+            <div class="features-grid">
+                <div class="feature-card glass-card animate-slide">
+                    <div class="feature-icon-box"><span class="feature-icon-text">حماية</span></div>
+                    <h3>فلترة المخاوف</h3>
+                    <p>هل تخاف من الطيران أو المرتفعات؟ يقوم النظام تلقائياً بإزالة الوجهات غير المتوافقة واقتراح بدائل برية آمنة.</p>
+                </div>
+                <div class="feature-card glass-card animate-slide delay-1">
+                    <div class="feature-icon-box"><span class="feature-icon-text">ميزانية</span></div>
+                    <h3>تطابق الميزانية</h3>
+                    <p>من رحلات الميزانية المحدودة إلى الفخامة المطلقة — يربط المحرك ميزانيتك بالجواهر الخفية أو المنتجعات الراقية.</p>
+                </div>
+                <div class="feature-card glass-card animate-slide delay-2">
+                    <div class="feature-icon-box"><span class="feature-icon-text">أجواء</span></div>
+                    <h3>مطابقة الأجواء</h3>
+                    <p>طبيعة خلابة، مدن عصرية، تاريخ عريق، أو بحار استوائية — تفضيلاتك في الأجواء تشكل التوصية النهائية مباشرة.</p>
+                </div>
+                <div class="feature-card glass-card animate-slide delay-1">
+                    <div class="feature-icon-box"><span class="feature-icon-text">طبي</span></div>
+                    <h3>فروع طبية وتطوعية</h3>
+                    <p>مسارات متعددة الخطوات متخصصة للسياحة العلاجية في ألمانيا والمهام التطوعية في نيبال مع أسئلة فرعية مخصصة.</p>
+                </div>
+                <div class="feature-card glass-card animate-slide delay-2">
+                    <div class="feature-icon-box"><span class="feature-icon-text">صور</span></div>
+                    <h3>معرض صور تفاعلي</h3>
+                    <p>كل وجهة تأتي مع معرض صور جميل بتصميم الشلال مع عارض صور بملء الشاشة وتنقل بين الشرائح.</p>
+                </div>
+                <div class="feature-card glass-card animate-slide delay-3">
+                    <div class="feature-icon-box"><span class="feature-icon-text">تتبع</span></div>
+                    <h3>تتبع منطقي شفاف</h3>
+                    <p>شاهد بالضبط أي القواعد تم تطبيقها ولماذا. تفصيل كامل لكل خطوة استدلال — ذكاء اصطناعي قابل للتفسير بالكامل.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== HOW IT WORKS ==================== -->
+    <section id="how" class="section how-section">
+        <div class="section-inner">
+            <div class="section-badge">آلية العمل</div>
+            <h2 class="section-title">كيف يعمل النظام الخبير</h2>
+            <p class="section-desc">نظام قواعد إنتاج من 3 مستويات مع محرك استدلال أمامي.</p>
+
+            <div class="steps-grid">
+                <div class="step-card glass-card">
+                    <div class="step-number">01</div>
+                    <h3>أجب على الأسئلة الذكية</h3>
+                    <p>يطرح النظام أسئلة تكيفية عن سبب رحلتك ومدتها ومخاوفك وميزانيتك والأجواء المفضلة. الأسئلة تتفرع بذكاء بناءً على إجاباتك.</p>
+                </div>
+                <div class="step-connector">←</div>
+                <div class="step-card glass-card">
+                    <div class="step-number">02</div>
+                    <h3>محرك الاستدلال الأمامي</h3>
+                    <p>تصبح إجاباتك حقائق في الذاكرة العاملة. يفحص المحرك أكثر من 28 قاعدة إنتاج، ويطلق المطابقة منها، ويستنتج نتائج جديدة حتى الاستقرار.</p>
+                </div>
+                <div class="step-connector">←</div>
+                <div class="step-card glass-card">
+                    <div class="step-number">03</div>
+                    <h3>نتيجة المطابقة المثالية</h3>
+                    <p>يعرض النظام وجهتك المثالية مع تقييم بالنجوم وتحذيرات السلامة ومعرض صور متعدد وتتبع كامل للقواعد لتوضيح الشفافية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DESTINATIONS PREVIEW ==================== -->
+    <section id="destinations" class="section dest-section">
+        <div class="section-inner">
+            <div class="section-badge">وجهاتنا</div>
+            <h2 class="section-title">18 وجهة مختارة بعناية</h2>
+            <p class="section-desc">من شوارع طوكيو المضيئة إلى وديان صلالة الخضراء — كل توصية مدعومة بقواعد خبيرة.</p>
+
+            <div class="dest-chips">
+                <span class="dest-chip">طوكيو</span>
+                <span class="dest-chip">سويسرا</span>
+                <span class="dest-chip">بورا بورا والمالديف</span>
+                <span class="dest-chip">روما</span>
+                <span class="dest-chip">كوالالمبور</span>
+                <span class="dest-chip">بوكيت</span>
+                <span class="dest-chip">إسطنبول</span>
+                <span class="dest-chip">سانتوريني</span>
+                <span class="dest-chip">قيرغيزستان</span>
+                <span class="dest-chip">القاهرة والأقصر</span>
+                <span class="dest-chip">فيتنام</span>
+                <span class="dest-chip">بالاوان</span>
+                <span class="dest-chip">جدة والرياض</span>
+                <span class="dest-chip">العُلا</span>
+                <span class="dest-chip">صلالة</span>
+                <span class="dest-chip">كروز البحر الأحمر</span>
+                <span class="dest-chip">ألمانيا — سياحة علاجية</span>
+                <span class="dest-chip">نيبال — تطوع</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA FOOTER ==================== -->
+    <section class="section cta-section">
+        <div class="section-inner cta-inner">
+            <h2 class="cta-title">جاهز لاكتشاف رحلتك المثالية؟</h2>
+            <p class="cta-desc">أجب على بضعة أسئلة واحصل على وجهة موصى بها بواسطة قواعد خبيرة — وليس خوارزميات عشوائية.</p>
+            <a href="/matcher" class="btn-primary btn-large">
+                ابدأ مكتشف المغامرات
+            </a>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span>مكتشف المغامرات — نظام خبير قائم على القواعد</span>
+            <span class="footer-dot">•</span>
+            <span>محرك استدلال أمامي</span>
+        </div>
+    </footer>
+
+    <script>
+    // ==========================================
+    // LANDING PAGE CANVAS ANIMATION
+    // ==========================================
+    (function() {
+        const canvas = document.getElementById('bgCanvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let W = canvas.width = window.innerWidth;
+        let H = canvas.height = window.innerHeight;
+        window.addEventListener('resize', () => { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; });
+
+        const shapes = [];
+        const N = 50;
+        const fills = [
+            'rgba(14,165,233,0.15)', 'rgba(139,92,246,0.13)',
+            'rgba(249,115,22,0.12)', 'rgba(16,185,129,0.14)',
+            'rgba(236,72,153,0.12)', 'rgba(245,158,11,0.13)'
+        ];
+        const strokes = [
+            'rgba(14,165,233,0.32)', 'rgba(139,92,246,0.28)',
+            'rgba(249,115,22,0.25)', 'rgba(16,185,129,0.28)',
+            'rgba(236,72,153,0.25)', 'rgba(245,158,11,0.25)'
+        ];
+
+        for (let i = 0; i < N; i++) {
+            const r = Math.random();
+            let sz = r < 0.3 ? 8 + Math.random()*16 : r < 0.6 ? 24+Math.random()*32 : r < 0.85 ? 56+Math.random()*44 : 100+Math.random()*50;
+            const ci = Math.floor(Math.random()*fills.length);
+            shapes.push({
+                t: Math.floor(Math.random()*6), x: Math.random()*W, y: Math.random()*H, sz,
+                dx: (Math.random()-0.5)*0.65, dy: (Math.random()-0.5)*0.65,
+                rot: Math.random()*Math.PI*2, rs: (Math.random()-0.5)*0.01,
+                fc: fills[ci], sc: strokes[ci], outline: Math.random()>0.5, po: Math.random()*6.28
+            });
+        }
+
+        let t = 0;
+        function hex(ctx, s) { ctx.beginPath(); for(let i=0;i<6;i++){const a=Math.PI/3*i-Math.PI/6; i?ctx.lineTo(Math.cos(a)*s,Math.sin(a)*s):ctx.moveTo(Math.cos(a)*s,Math.sin(a)*s);} ctx.closePath(); }
+        function tri(ctx, s) { ctx.beginPath(); ctx.moveTo(0,-s); ctx.lineTo(-s*.866,s*.5); ctx.lineTo(s*.866,s*.5); ctx.closePath(); }
+        function dia(ctx, s) { ctx.beginPath(); ctx.moveTo(0,-s); ctx.lineTo(s*.6,0); ctx.lineTo(0,s); ctx.lineTo(-s*.6,0); ctx.closePath(); }
+
+        function draw() {
+            ctx.clearRect(0,0,W,H); t+=0.006;
+            ctx.lineWidth=0.6;
+            for(let i=0;i<shapes.length;i++) for(let j=i+1;j<shapes.length;j++){
+                const d=Math.hypot(shapes[i].x-shapes[j].x, shapes[i].y-shapes[j].y);
+                if(d<160){ctx.strokeStyle=`rgba(14,165,233,${(1-d/160)*0.07})`; ctx.beginPath(); ctx.moveTo(shapes[i].x,shapes[i].y); ctx.lineTo(shapes[j].x,shapes[j].y); ctx.stroke();}
+            }
+            shapes.forEach(s=>{
+                s.x+=s.dx; s.y+=s.dy; s.rot+=s.rs;
+                if(s.x<-s.sz)s.x=W+s.sz; if(s.x>W+s.sz)s.x=-s.sz;
+                if(s.y<-s.sz)s.y=H+s.sz; if(s.y>H+s.sz)s.y=-s.sz;
+                const p=1+Math.sin(t*2+s.po)*0.06, ds=s.sz/2*p;
+                ctx.save(); ctx.translate(s.x,s.y); ctx.rotate(s.rot);
+                switch(s.t){
+                    case 0: ctx.beginPath(); ctx.arc(0,0,ds,0,Math.PI*2); break;
+                    case 1: ctx.beginPath(); ctx.roundRect(-ds,-ds,ds*2,ds*2,ds*.22); break;
+                    case 2: ctx.beginPath(); ctx.arc(0,0,ds,0,Math.PI*2); ctx.lineWidth=Math.max(2,ds*.08); ctx.strokeStyle=s.sc; ctx.stroke(); ctx.restore(); return;
+                    case 3: tri(ctx,ds); break;
+                    case 4: dia(ctx,ds); break;
+                    case 5: hex(ctx,ds); break;
+                }
+                if(s.outline){ctx.lineWidth=Math.max(1.5,ds*.06); ctx.strokeStyle=s.sc; ctx.stroke();}
+                else{ctx.fillStyle=s.fc; ctx.fill();}
+                ctx.restore();
+            });
+            requestAnimationFrame(draw);
+        }
+        draw();
+    })();
+
+    // Scroll-triggered animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.animate-slide, .step-card, .feature-card').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
